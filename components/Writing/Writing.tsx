@@ -4,6 +4,12 @@ import { Reveal } from "@/components/ui/Reveal";
 
 const articles = [
   {
+    title: "How Databases Scale: A Practical Roadmap from One Server to Sharding",
+    category: "Database Architecture",
+    date: "2026",
+    href: "https://medium.com/@pratheekshetty/how-databases-scale-a-practical-roadmap-from-one-server-to-sharding-8fb2eb3672dd",
+  },
+  {
     title: "Building a Production-Grade Support AI Agent",
     category: "AI Systems",
     date: "2026",
