@@ -13,7 +13,7 @@ export default function Home() {
     "@type": "Person",
     name: "Pratheek Shetty",
     jobTitle: "Technical Lead",
-    url: "https://pratheekshetty.dev",
+    url: "https://pratheekshetty.netlify.app",
     sameAs: [
       "https://www.linkedin.com/in/pratheek-shetty-10a173186",
       "https://pratheekshetty.medium.com",
