@@ -2,12 +2,13 @@
 
 import { ArrowUpRight } from "lucide-react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 const links = [
-  ["Impact", "#impact"],
-  ["Expertise", "#expertise"],
-  ["Experience", "#experience"],
-  ["Writing", "#writing"],
+  ["Impact", "/#impact"],
+  ["Expertise", "/#expertise"],
+  ["Experience", "/#experience"],
+  ["Writing", "/blog"],
 ];
 
 export function Navbar() {
@@ -19,17 +20,17 @@ export function Navbar() {
       className="fixed inset-x-0 top-0 z-50 border-b border-white/[0.06] bg-[#0a0a0c]/80 backdrop-blur-xl"
     >
       <nav className="page-shell flex h-16 items-center justify-between" aria-label="Main navigation">
-        <a href="#top" className="flex items-center gap-3" aria-label="Pratheek Shetty, home">
+        <Link href="/#top" className="flex items-center gap-3" aria-label="Pratheek Shetty, home">
           <span className="grid size-8 place-items-center rounded-lg border border-white/10 bg-white/[0.04] font-mono text-[11px] font-semibold text-white">
             PS
           </span>
           <span className="hidden text-sm font-medium tracking-[-0.01em] text-zinc-300 sm:block">Pratheek Shetty</span>
-        </a>
+        </Link>
         <div className="hidden items-center gap-7 md:flex">
           {links.map(([label, href]) => (
-            <a key={href} href={href} className="text-xs text-zinc-500 transition-colors hover:text-zinc-100">
+            <Link key={href} href={href} className="text-xs text-zinc-500 transition-colors hover:text-zinc-100">
               {label}
-            </a>
+            </Link>
           ))}
         </div>
         <a

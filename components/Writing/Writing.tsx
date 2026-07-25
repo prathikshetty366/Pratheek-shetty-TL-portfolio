@@ -1,13 +1,22 @@
 import { ArrowUpRight, BookOpen, Clock3 } from "lucide-react";
+import Link from "next/link";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { Reveal } from "@/components/ui/Reveal";
 
 const articles = [
   {
+    title: "Distributed Transactions in Microservices: From 2PC to the Saga Pattern",
+    category: "Distributed Systems",
+    date: "12 min",
+    href: "/blog/distributed-transactions-2pc-saga-pattern",
+    local: true,
+  },
+  {
     title: "How Databases Scale: A Practical Roadmap from One Server to Sharding",
     category: "Database Architecture",
-    date: "2026",
-    href: "https://medium.com/@pratheekshetty/how-databases-scale-a-practical-roadmap-from-one-server-to-sharding-8fb2eb3672dd",
+    date: "20 min",
+    href: "/blog/how-databases-scale",
+    local: true,
   },
   {
     title: "Building a Production-Grade Support AI Agent",
@@ -56,17 +65,17 @@ export function Writing() {
           title="Field notes from production."
           copy="Long-form breakdowns of the trade-offs, failure modes, and architecture decisions behind real-world systems."
         />
-        <a href="https://pratheekshetty.medium.com" target="_blank" rel="noreferrer" className="group flex shrink-0 items-center gap-2 text-xs text-zinc-500 hover:text-zinc-200">
-          View all on Medium <ArrowUpRight size={14} className="group-hover:text-technical" />
-        </a>
+        <Link href="/blog" className="group flex shrink-0 items-center gap-2 text-xs text-zinc-500 hover:text-zinc-200">
+          View all writing <ArrowUpRight size={14} className="group-hover:text-technical" />
+        </Link>
       </div>
       <div className="mt-14 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
         {articles.map((article, index) => (
           <Reveal key={article.title} delay={(index % 3) * 0.05}>
-            <a
+            <Link
               href={article.href}
-              target="_blank"
-              rel="noreferrer"
+              target={article.local ? undefined : "_blank"}
+              rel={article.local ? undefined : "noreferrer"}
               className="hairline-card group flex min-h-[280px] flex-col rounded-2xl p-6 transition duration-300 hover:-translate-y-1 hover:border-technical/20 hover:shadow-glow sm:p-7"
             >
               <div className="flex items-center justify-between">
@@ -78,7 +87,7 @@ export function Writing() {
                 <span>{article.category}</span>
                 <span className="flex items-center gap-1.5"><Clock3 size={11} /> {article.date}</span>
               </div>
-            </a>
+            </Link>
           </Reveal>
         ))}
       </div>
