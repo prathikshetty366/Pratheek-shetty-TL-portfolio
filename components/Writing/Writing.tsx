@@ -5,6 +5,13 @@ import { Reveal } from "@/components/ui/Reveal";
 
 const articles = [
   {
+    title: "Beyond the Demo: Building Agentic AI You Can Trust",
+    category: "Agentic AI",
+    date: "15 min",
+    href: "/blog/building-reliable-agentic-ai",
+    local: true,
+  },
+  {
     title: "Distributed Transactions in Microservices: From 2PC to the Saga Pattern",
     category: "Distributed Systems",
     date: "12 min",

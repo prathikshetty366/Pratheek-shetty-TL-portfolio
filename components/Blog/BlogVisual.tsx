@@ -66,3 +66,27 @@ export function DatabaseScalingVisual() {
     </div>
   );
 }
+
+export function AgentBuildingVisual() {
+  return (
+    <section aria-label="The agent reliability feedback loop" className="relative isolate overflow-hidden rounded-2xl border border-white/10 bg-[#0b1010] px-6 py-9 sm:px-12 sm:py-12">
+      <div className="blog-visual-grid pointer-events-none" aria-hidden="true" />
+      <div aria-hidden="true" className="pointer-events-none absolute -right-24 -top-24 -z-10 size-96 rounded-full bg-technical/[0.06] blur-3xl" />
+      <p className="relative font-mono text-[10px] uppercase tracking-[0.18em] text-technical">Field notes / Building trust</p>
+      <p className="relative mt-8 max-w-2xl text-3xl font-medium leading-tight tracking-[-0.04em] text-zinc-200 sm:text-5xl">Trust grows with<br /><span className="text-zinc-500">every verified improvement.</span></p>
+      <div className="relative mt-10 grid gap-7 border-t border-white/10 pt-7 sm:grid-cols-3 sm:gap-8">
+        {[
+          ["01", "Observe", "Follow the evidence behind each outcome."],
+          ["02", "Evaluate", "Turn difficult cases into repeatable checks."],
+          ["03", "Improve", "Verify the change. Learn from production."],
+        ].map(([number, title, detail]) => (
+          <div key={number}>
+            <span className="font-mono text-[10px] text-technical">{number}</span>
+            <h2 className="mt-3 text-sm font-medium text-zinc-200">{title}</h2>
+            <p className="mt-2 text-xs leading-6 text-zinc-400">{detail}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}

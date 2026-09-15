@@ -3,7 +3,7 @@ import Link from "next/link";
 import { ArrowLeft, Clock3 } from "lucide-react";
 import { notFound } from "next/navigation";
 import { BlogFooter } from "@/components/Blog/BlogFooter";
-import { BlogVisual, DatabaseScalingVisual } from "@/components/Blog/BlogVisual";
+import { AgentBuildingVisual, BlogVisual, DatabaseScalingVisual } from "@/components/Blog/BlogVisual";
 import { extractHeadings, MarkdownArticle } from "@/components/Blog/MarkdownArticle";
 import { ReadingProgress } from "@/components/Blog/ReadingProgress";
 import { Navbar } from "@/components/Navbar/Navbar";
@@ -87,7 +87,7 @@ export default async function BlogPostPage({ params }: PageProps) {
         </header>
 
         <div className="page-shell">
-          {post.visual === "database-scaling" ? <DatabaseScalingVisual /> : <BlogVisual />}
+          {post.visual === "agent-building" ? <AgentBuildingVisual /> : post.visual === "database-scaling" ? <DatabaseScalingVisual /> : <BlogVisual />}
         </div>
 
         <div className="page-shell grid items-start gap-14 py-20 lg:grid-cols-[220px_minmax(0,720px)] lg:justify-center lg:gap-20 lg:py-28">
